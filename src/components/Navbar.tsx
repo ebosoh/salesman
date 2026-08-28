@@ -44,13 +44,12 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo & Brand */}
           <Link to={role === 'admin' ? '/admin/map' : '/agent'} className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center shadow-md group-hover:scale-105 transition">
-              <span className="font-black text-white text-lg">S</span>
+            <div className="h-11 px-2 py-1 bg-white rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition">
+              <img src="/logo-sewak.png" alt="Sewak Plastics Ltd" className="h-full w-auto object-contain max-h-9" />
             </div>
             <div>
               <div className="flex items-center space-x-1.5">
-                <span className="font-extrabold text-lg tracking-tight text-white">SEWAK</span>
-                <span className="text-[10px] bg-brand-red text-white font-bold px-1.5 py-0.5 rounded">PWA</span>
+                <span className="font-extrabold text-base sm:text-lg tracking-tight text-white">SEWAK PLASTICS</span>
               </div>
               <p className="text-[10px] text-blue-200 uppercase tracking-wider font-semibold">Tanks & Plumbing Pipes</p>
             </div>

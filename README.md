@@ -1,13 +1,12 @@
-# 🏭 Sewak Plastics Field Sales Tracker & Verification PWA
+# 🏭 Sewak Plastics Field Sales Tracker & Verification App
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
 [![Leaflet](https://img.shields.io/badge/Leaflet-1.9-green.svg)](https://leafletjs.com/)
 [![Dexie IndexedDB](https://img.shields.io/badge/Dexie.js-IndexedDB-orange.svg)](https://dexie.org/)
-[![PWA](https://img.shields.io/badge/PWA-VitePWA-purple.svg)](https://vite-pwa-org.netlify.app/)
 
-A lightweight, mobile-first Progressive Web App (PWA) built for **Sewak Plastics (Kenya)** — manufacturer of **Plastic Water Tanks** and **Plastic Plumbing Pipes** only — to monitor 20 field sales representatives across **Nakuru County** during work hours, verify physical shop visits, and prevent location spoofing under unstable 3G/4G connectivity on low-end Android handsets.
+A lightweight, mobile-first web app built for **Sewak Plastics (Kenya)** — manufacturer of **Plastic Water Tanks** and **Plastic Plumbing Pipes** only — to monitor 20 field sales representatives across **Nakuru County** during work hours, verify physical shop visits, and prevent location spoofing under unstable 3G/4G connectivity on low-end Android handsets.
 
 ---
 

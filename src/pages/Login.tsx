@@ -45,14 +45,14 @@ export const Login: React.FC = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Brand Header */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-2xl bg-brand-blue flex items-center justify-center shadow-xl border-2 border-brand-red mb-3">
-            <span className="font-black text-white text-3xl">S</span>
+          <div className="bg-white px-5 py-3 rounded-2xl shadow-md border border-slate-200 mb-3 max-w-[220px] flex items-center justify-center">
+            <img src="/logo-sewak.png" alt="Sewak Plastics Ltd" className="w-full h-auto object-contain max-h-16" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-blue tracking-tight">
-            SEWAK PLASTICS
+          <h1 className="text-xl sm:text-2xl font-extrabold text-brand-blue tracking-tight">
+            SEWAK PLASTICS LTD
           </h1>
-          <p className="text-xs uppercase tracking-widest font-bold text-brand-red mt-0.5">
-            Water Tanks & Plumbing Pipes • Field Sales PWA
+          <p className="text-xs uppercase tracking-wider font-bold text-brand-red mt-0.5">
+            Water Tanks & Plumbing Pipes • Field Sales Tracker
           </p>
         </div>
       </div>
