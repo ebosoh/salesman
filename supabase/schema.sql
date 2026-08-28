@@ -99,28 +99,44 @@ CREATE POLICY "Allow public photo uploads" ON storage.objects
 CREATE POLICY "Allow public photo downloads" ON storage.objects
     FOR SELECT USING (bucket_id = 'visit-photos');
 
--- INITIAL DEMO SEED DATA (KENYA FIELD AGENTS & ADMIN)
+-- INITIAL DEMO SEED DATA (NAKURU COUNTY FIELD AGENTS & ADMIN)
 INSERT INTO public.profiles (id, full_name, phone_number, role, pin, is_active)
 VALUES
-    ('11111111-1111-1111-1111-111111111111', 'John Kimani', '0712345678', 'field_agent', '1234', true),
-    ('22222222-2222-2222-2222-222222222222', 'Mercy Achieng', '0723456789', 'field_agent', '1234', true),
-    ('33333333-3333-3333-3333-333333333333', 'David Kiprono', '0734567890', 'field_agent', '1234', true),
-    ('44444444-4444-4444-4444-444444444444', 'Faith Wanjiku', '0745678901', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111101', 'John Kimani', '0712345601', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111102', 'Mercy Achieng', '0712345602', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111103', 'David Kiprono', '0712345603', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111104', 'Faith Wanjiku', '0712345604', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111105', 'Peter Omwamba', '0712345605', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111106', 'Grace Njeri', '0712345606', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111107', 'Samuel Koech', '0712345607', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111108', 'Eunice Moraa', '0712345608', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111109', 'Dennis Kipkemboi', '0712345609', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111110', 'Beatrice Chebet', '0712345610', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111111', 'James Mwangi', '0712345611', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111112', 'Rosemary Wambui', '0712345612', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111113', 'Geoffrey Kiptoo', '0712345613', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111114', 'Caroline Muthoni', '0712345614', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111115', 'Victor Otieno', '0712345615', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111116', 'Agnes Wanjiru', '0712345616', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111117', 'Brian Rotich', '0712345617', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111118', 'Lydia Chepkemoi', '0712345618', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111119', 'Kevin Ochieng', '0712345619', 'field_agent', '1234', true),
+    ('11111111-1111-1111-1111-111111111120', 'Stella Nyambura', '0712345620', 'field_agent', '1234', true),
     ('99999999-9999-9999-9999-999999999999', 'Sarah Mwangi (Operations Admin)', '0700000000', 'admin', '8888', true)
 ON CONFLICT (phone_number) DO NOTHING;
 
--- SEED INITIAL VISITS FOR DEMONSTRATION
+-- SEED INITIAL VISITS IN NAKURU COUNTY
 INSERT INTO public.client_visits (
     id, agent_id, shop_name, phone_number, physical_location, latitude, longitude, comments, device_name, visited_at, is_flagged, flag_reason
 ) VALUES
     (
-        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
-        '11111111-1111-1111-1111-111111111111',
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01',
+        '11111111-1111-1111-1111-111111111101',
         'Crown Hardware & Plastics',
-        '0722112233',
-        'Pipeline Stage, Nairobi',
-        -1.3090,
-        36.8850,
+        '0722112201',
+        'Kenyatta Avenue, Nakuru CBD',
+        -0.2827,
+        36.0673,
         'Requested quotation for 500 units of 20L Jerrycans and PVC fittings.',
         'Samsung Galaxy A14 (SM-A145F)',
         NOW() - INTERVAL '3 hours',
@@ -128,31 +144,101 @@ INSERT INTO public.client_visits (
         null
     ),
     (
-        'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
-        '22222222-2222-2222-2222-222222222222',
-        'Coast BuildMat Supplies',
-        '0733445566',
-        'Digo Road, Mombasa',
-        -4.0580,
-        39.6640,
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa02',
+        '11111111-1111-1111-1111-111111111102',
+        'Kaptembwa Agro-Plastics Ltd',
+        '0733445502',
+        'Kaptembwa Market, Nakuru West',
+        -0.2980,
+        36.0420,
         'Delivered sample water tanks catalog. Owner requested follow-up next Tuesday.',
         'Tecno Spark 10 Pro',
+        NOW() - INTERVAL '2 hours',
+        false,
+        null
+    ),
+    (
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa03',
+        '11111111-1111-1111-1111-111111111103',
+        'QuickFix General Store',
+        '0799887703',
+        'Free Area Center, Nakuru East',
+        -0.2805,
+        36.1050,
+        'Store visit recorded while in fast transit. Verified anomaly.',
+        'Infinix Hot 30',
+        NOW() - INTERVAL '45 minutes',
+        true,
+        'Speed Jump Anomaly: Speed recorded 125 km/h (> 100 km/h limit)'
+    ),
+    (
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa04',
+        '11111111-1111-1111-1111-111111111106',
+        'Mau View Hardware Mart',
+        '0722334406',
+        'Main Commercial St, Njoro Town',
+        -0.3450,
+        35.9400,
+        'Ordered 200 rolls of drip irrigation pipes.',
+        'Redmi Note 12',
         NOW() - INTERVAL '1 hour',
         false,
         null
     ),
     (
-        'cccccccc-cccc-cccc-cccc-cccccccccccc',
-        '33333333-3333-3333-3333-333333333333',
-        'QuickFix General Store',
-        '0799887766',
-        'Oginga Odinga St, Kisumu',
-        -0.0917,
-        34.7680,
-        'Store visit recorded while in fast transit. Verified anomaly.',
-        'Infinix Hot 30',
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa05',
+        '11111111-1111-1111-1111-111111111111',
+        'Rift Valley Hardware & Timber',
+        '0733556611',
+        'Gilgil Town Center',
+        -0.4931,
+        36.2833,
+        'Interested in Sewak 1000L cylindrical water tanks.',
+        'Samsung Galaxy A24',
+        NOW() - INTERVAL '4 hours',
+        false,
+        null
+    ),
+    (
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa06',
+        '11111111-1111-1111-1111-111111111113',
+        'Crater Builders & Pipe Supplies',
+        '0744667713',
+        'Mbaria Kaniu Rd, Naivasha CBD',
+        -0.7172,
+        36.4310,
+        'Verified delivery of PVC elbows and conduit pipes.',
+        'Tecno Camon 20',
+        NOW() - INTERVAL '1.5 hours',
+        false,
+        null
+    ),
+    (
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa07',
+        '11111111-1111-1111-1111-111111111109',
+        'Highland Hardware Supplies',
+        '0755778809',
+        'Posta Road, Molo Town',
+        -0.2480,
+        35.7330,
+        'Stock inquiry for Sewak heavy-duty basins and buckets.',
+        'Infinix Note 30',
+        NOW() - INTERVAL '2.5 hours',
+        false,
+        null
+    ),
+    (
+        'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa08',
+        '11111111-1111-1111-1111-111111111117',
+        'Bahati Farmers Construction Hub',
+        '0766889917',
+        'Bahati Center, Nakuru North',
+        -0.1550,
+        36.1450,
+        'Confirmed order for 150 greenhouse film polythene sheets.',
+        'Samsung Galaxy A14',
         NOW() - INTERVAL '30 minutes',
-        true,
-        'Speed Jump Anomaly: Speed recorded 125 km/h (> 100 km/h limit)'
+        false,
+        null
     )
 ON CONFLICT (id) DO NOTHING;

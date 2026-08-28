@@ -88,10 +88,10 @@ export const ClientVisitForm: React.FC = () => {
           },
           (err) => {
             console.warn('Geolocation capture failed, using fallback:', err);
-            // Default Nairobi coordinates fallback
+            // Default Nakuru CBD coordinates fallback
             setCoords({
-              lat: -1.3090,
-              lng: 36.8850,
+              lat: -0.2827,
+              lng: 36.0673,
               accuracy: 20
             });
             setIsCapturingGps(false);
@@ -99,7 +99,7 @@ export const ClientVisitForm: React.FC = () => {
           { enableHighAccuracy: true, timeout: 8000 }
         );
       } else {
-        setCoords({ lat: -1.3090, lng: 36.8850, accuracy: 20 });
+        setCoords({ lat: -0.2827, lng: 36.0673, accuracy: 20 });
         setIsCapturingGps(false);
       }
     } catch {
@@ -400,7 +400,7 @@ export const ClientVisitForm: React.FC = () => {
               <input
                 type="text"
                 required
-                placeholder="e.g. Pipeline Stage, Outering Road, Nairobi"
+                placeholder="e.g. Kenyatta Avenue, Near Westside Mall, Nakuru"
                 value={physicalLocation}
                 onChange={(e) => setPhysicalLocation(e.target.value)}
                 className="block w-full pl-10 pr-3 py-3 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm font-medium min-h-[48px]"

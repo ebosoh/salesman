@@ -94,7 +94,7 @@ export const CameraCaptureModal: React.FC<CameraCaptureModalProps> = ({
     // Overlay Anti-Spoofing & Geolocation Watermark Stamp directly onto image pixels
     const kenyaDate = getKenyaNow();
     const dateStr = kenyaDate.toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' }) + ' EAT';
-    const latStr = coords ? `GPS: ${coords.lat.toFixed(6)}, ${coords.lng.toFixed(6)} (±${Math.round(coords.accuracy)}m)` : 'GPS: Nairobi, Kenya';
+    const latStr = coords ? `GPS: ${coords.lat.toFixed(6)}, ${coords.lng.toFixed(6)} (±${Math.round(coords.accuracy)}m)` : 'GPS: Nakuru, Kenya';
 
     // Bottom dark gradient strip
     ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';

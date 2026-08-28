@@ -67,7 +67,7 @@ export const AdminDashboard: React.FC = () => {
             Sewak Plastics Field Sales Monitoring
           </h1>
           <p className="text-sm text-blue-200/80 mt-1 max-w-xl">
-            Real-time GPS tracking, anti-spoofing verification, and shop visits across Kenya.
+            Real-time GPS tracking, anti-spoofing verification, and shop visits across Nakuru County.
           </p>
         </div>
 
@@ -95,7 +95,9 @@ export const AdminDashboard: React.FC = () => {
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Field Agents</p>
             <p className="text-3xl font-black text-slate-900 mt-1">{fieldAgents.length}</p>
-            <p className="text-xs text-emerald-600 font-semibold mt-1">4 Active in Field</p>
+            <p className="text-xs text-emerald-600 font-semibold mt-1">
+              {fieldAgents.filter(a => a.is_active).length} Active in Nakuru County
+            </p>
           </div>
           <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
             <Users className="w-6 h-6" />
@@ -176,7 +178,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="p-5 border-b border-slate-200 flex justify-between items-center">
           <div>
             <h3 className="font-bold text-base text-slate-900">Active Field Sales Agents</h3>
-            <p className="text-xs text-slate-500">Live monitoring across Nairobi, Mombasa, Kisumu & Nakuru</p>
+            <p className="text-xs text-slate-500">Live monitoring across Nakuru CBD, Naivasha, Gilgil, Molo, Njoro, Bahati & Subukia</p>
           </div>
           <Link
             to="/admin/map"

@@ -57,18 +57,20 @@ export const AgentDashboard: React.FC = () => {
   // Quick simulation helper for desktop/demo testing
   const simulateGpsMove = async () => {
     if (!user) return;
-    const nairobiSpots = [
-      { name: 'Embakasi Industrial Park', lat: -1.3200, lng: 36.8900 },
-      { name: 'Donholm Greenfields', lat: -1.3000, lng: 36.8800 },
-      { name: 'Jogoo Road Hardware Hub', lat: -1.2900, lng: 36.8500 },
-      { name: 'Industrial Area Enterprise Rd', lat: -1.3050, lng: 36.8650 },
+    const nakuruSpots = [
+      { name: 'Kenyatta Avenue Hardware Hub (Nakuru CBD)', lat: -0.2827, lng: 36.0673 },
+      { name: 'Free Area Center (Nakuru East)', lat: -0.2805, lng: 36.1050 },
+      { name: 'Njoro Commercial Junction', lat: -0.3450, lng: 35.9400 },
+      { name: 'Naivasha Town Center (Mbaria Kaniu Rd)', lat: -0.7172, lng: 36.4310 },
+      { name: 'Gilgil Town Center', lat: -0.4931, lng: 36.2833 },
+      { name: 'Molo Posta Road', lat: -0.2480, lng: 35.7330 }
     ];
-    const spot = nairobiSpots[Math.floor(Math.random() * nairobiSpots.length)];
+    const spot = nakuruSpots[Math.floor(Math.random() * nakuruSpots.length)];
     const mockLog: LocationLog = {
       id: `sim-${Date.now()}`,
       agent_id: user.id,
-      latitude: spot.lat + (Math.random() - 0.5) * 0.005,
-      longitude: spot.lng + (Math.random() - 0.5) * 0.005,
+      latitude: spot.lat + (Math.random() - 0.5) * 0.003,
+      longitude: spot.lng + (Math.random() - 0.5) * 0.003,
       accuracy: 8,
       speed: 15,
       is_mocked: false,
@@ -166,7 +168,7 @@ export const AgentDashboard: React.FC = () => {
             <p className="text-xs text-slate-300 font-mono mt-0.5">
               {currentLocation
                 ? `${currentLocation.latitude.toFixed(5)}, ${currentLocation.longitude.toFixed(5)} (Speed: ${currentLocation.speed || 0} km/h)`
-                : 'Lat: -1.3090, Lng: 36.8850 (Pipeline, Nairobi)'}
+                : 'Lat: -0.2827, Lng: 36.0673 (Kenyatta Ave, Nakuru)'}
             </p>
           </div>
         </div>

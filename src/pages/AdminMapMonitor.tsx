@@ -60,6 +60,30 @@ export const AdminMapMonitor: React.FC = () => {
   const agentMarkers: MapAgentMarker[] = useMemo(() => {
     const fieldAgents = profiles.filter((p) => p.role === 'field_agent');
 
+    // Nakuru County fallback coordinates per agent
+    const nakuruDefaultCoords = [
+      { lat: -0.2827, lng: 36.0673, speed: 22, status: 'moving' as const }, // Nakuru CBD
+      { lat: -0.2980, lng: 36.0420, speed: 0, status: 'stationary' as const }, // Kaptembwa
+      { lat: -0.2805, lng: 36.1050, speed: 35, status: 'moving' as const }, // Free Area
+      { lat: -0.2750, lng: 36.1400, speed: 0, status: 'stationary' as const }, // Lanet
+      { lat: -0.2910, lng: 36.0580, speed: 18, status: 'moving' as const }, // Industrial Area
+      { lat: -0.3450, lng: 35.9400, speed: 28, status: 'moving' as const }, // Njoro
+      { lat: -0.2720, lng: 35.9850, speed: 42, status: 'moving' as const }, // Ngata
+      { lat: -0.2050, lng: 35.8600, speed: 0, status: 'stationary' as const }, // Salgaa
+      { lat: -0.2480, lng: 35.7330, speed: 15, status: 'moving' as const }, // Molo
+      { lat: -0.2970, lng: 35.8150, speed: 25, status: 'moving' as const }, // Elburgon
+      { lat: -0.4931, lng: 36.2833, speed: 20, status: 'moving' as const }, // Gilgil
+      { lat: -0.4450, lng: 36.2350, speed: 0, status: 'stationary' as const }, // Kikopey
+      { lat: -0.7172, lng: 36.4310, speed: 30, status: 'moving' as const }, // Naivasha CBD
+      { lat: -0.7600, lng: 36.4150, speed: 19, status: 'moving' as const }, // Karagita
+      { lat: -0.7020, lng: 36.4480, speed: 0, status: 'stationary' as const }, // Kayole Naivasha
+      { lat: -0.9900, lng: 36.5850, speed: 38, status: 'moving' as const }, // Mai Mahiu
+      { lat: -0.1550, lng: 36.1450, speed: 24, status: 'moving' as const }, // Bahati
+      { lat: 0.0050, lng: 36.2450, speed: 0, status: 'stationary' as const }, // Subukia
+      { lat: -0.2950, lng: 36.0850, speed: 16, status: 'moving' as const }, // Ronda Nakuru
+      { lat: -0.2680, lng: 36.0550, speed: 20, status: 'moving' as const }  // London Nakuru
+    ];
+
     return fieldAgents.map((profile, index) => {
       const agentLogs = locations
         .filter((l) => l.agent_id === profile.id)
@@ -67,13 +91,7 @@ export const AdminMapMonitor: React.FC = () => {
 
       const agentVisits = visits.filter((v) => v.agent_id === profile.id);
 
-      // Default Kenya locations per agent if logs are empty
-      const defaultCoords = [
-        { lat: -1.3090, lng: 36.8850, speed: 22, status: 'moving' }, // Nairobi Eastlands
-        { lat: -4.0580, lng: 39.6640, speed: 0, status: 'stationary' },  // Mombasa Digo Rd
-        { lat: -0.0917, lng: 34.7680, speed: 85, status: 'moving' }, // Kisumu
-        { lat: -0.2833, lng: 36.0667, speed: 0, status: 'offline' }   // Nakuru
-      ][index % 4];
+      const defaultCoords = nakuruDefaultCoords[index % nakuruDefaultCoords.length];
 
       const lastLoc: LocationLog = agentLogs[0] || {
         id: `loc-def-${profile.id}`,
@@ -90,11 +108,11 @@ export const AdminMapMonitor: React.FC = () => {
       let status: 'moving' | 'stationary' | 'offline' = 'moving';
       let stationaryMinutes = 0;
 
-      if (index === 1 || lastLoc.speed === 0) {
-        status = 'stationary';
-        stationaryMinutes = 24;
-      } else if (index === 3) {
+      if (!profile.is_active) {
         status = 'offline';
+      } else if (lastLoc.speed === 0 || (index % 4 === 1)) {
+        status = 'stationary';
+        stationaryMinutes = 15 + (index * 3) % 30;
       }
 
       return {
@@ -128,12 +146,13 @@ export const AdminMapMonitor: React.FC = () => {
     return agentMarkers.find((a) => a.profile.id === selectedAgentId) || null;
   }, [agentMarkers, selectedAgentId]);
 
-  // Demo simulation to move agents randomly in Kenya
+  // Demo simulation to move agents randomly in Nakuru County
   const simulateLiveMovement = async () => {
     if (agentMarkers.length === 0) return;
-    const target = agentMarkers[0];
-    const jitterLat = target.lastLocation.latitude + (Math.random() - 0.5) * 0.008;
-    const jitterLng = target.lastLocation.longitude + (Math.random() - 0.5) * 0.008;
+    const randomIndex = Math.floor(Math.random() * agentMarkers.length);
+    const target = agentMarkers[randomIndex];
+    const jitterLat = target.lastLocation.latitude + (Math.random() - 0.5) * 0.006;
+    const jitterLng = target.lastLocation.longitude + (Math.random() - 0.5) * 0.006;
 
     const newLog: LocationLog = {
       id: `live-${Date.now()}`,
@@ -141,7 +160,7 @@ export const AdminMapMonitor: React.FC = () => {
       latitude: jitterLat,
       longitude: jitterLng,
       accuracy: 8,
-      speed: Math.floor(Math.random() * 35) + 10,
+      speed: Math.floor(Math.random() * 35) + 12,
       is_mocked: false,
       recorded_at: new Date().toISOString()
     };
@@ -162,13 +181,15 @@ export const AdminMapMonitor: React.FC = () => {
           <div>
             <div className="flex items-center space-x-2">
               <h2 className="font-extrabold text-sm sm:text-base text-slate-900 leading-tight">
-                Kenya Field Sales Real-Time Map
+                Nakuru County Field Sales Real-Time Map
               </h2>
               <span className="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2 py-0.5 rounded-full">
                 {agentMarkers.length} Reps Tracked
               </span>
             </div>
-            <p className="text-xs text-slate-500">Live breadcrumb routes & physical store visits</p>
+            <p className="text-xs text-slate-500">
+              Live routes across Nakuru CBD, Naivasha, Gilgil, Molo, Njoro, Bahati & Subukia
+            </p>
           </div>
         </div>
 
@@ -187,9 +208,12 @@ export const AdminMapMonitor: React.FC = () => {
 
           <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs">
             <button
-              onClick={() => setFilterStatus('all')}
+              onClick={() => {
+                setFilterStatus('all');
+                setSelectedAgentId(null);
+              }}
               className={`px-2.5 py-1 rounded-lg font-bold transition ${
-                filterStatus === 'all' ? 'bg-brand-blue text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filterStatus === 'all' && !selectedAgentId ? 'bg-brand-blue text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               All ({agentMarkers.length})
@@ -212,6 +236,16 @@ export const AdminMapMonitor: React.FC = () => {
             </button>
           </div>
 
+          {selectedAgentId && (
+            <button
+              onClick={() => setSelectedAgentId(null)}
+              className="px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold hover:bg-blue-100 transition"
+              title="Reset view to show all Nakuru County agents"
+            >
+              Show All 20 Reps
+            </button>
+          )}
+
           <button
             onClick={() => loadMapData(true)}
             className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
@@ -223,7 +257,7 @@ export const AdminMapMonitor: React.FC = () => {
           <button
             onClick={simulateLiveMovement}
             className="flex items-center space-x-1 bg-brand-red hover:bg-brand-red-dark text-white px-3 py-1.5 rounded-xl text-xs font-bold shadow transition active:scale-95 min-h-[38px]"
-            title="Simulate live GPS movement for demo"
+            title="Simulate live GPS movement for a representative in Nakuru County"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>Simulate Move</span>

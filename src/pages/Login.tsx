@@ -121,7 +121,7 @@ export const Login: React.FC = () => {
             <div className="space-y-2">
               <button
                 type="button"
-                onClick={() => handleQuickDemoLogin('0712345678', 'field_agent', '1234')}
+                onClick={() => handleQuickDemoLogin('0712345601', 'field_agent', '1234')}
                 className="w-full flex items-center justify-between p-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs transition text-left min-h-[44px]"
               >
                 <div className="flex items-center space-x-2.5">
@@ -129,8 +129,8 @@ export const Login: React.FC = () => {
                     J
                   </div>
                   <div>
-                    <p className="font-bold text-slate-800">John Kimani (Nairobi)</p>
-                    <p className="text-[11px] text-slate-500 font-mono">0712 345 678 • Field Agent</p>
+                    <p className="font-bold text-slate-800">John Kimani (Nakuru CBD)</p>
+                    <p className="text-[11px] text-slate-500 font-mono">0712 345 601 • Field Agent</p>
                   </div>
                 </div>
                 <span className="text-[11px] font-bold text-blue-600">Login &rarr;</span>
@@ -138,16 +138,16 @@ export const Login: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => handleQuickDemoLogin('0723456789', 'field_agent', '1234')}
+                onClick={() => handleQuickDemoLogin('0712345613', 'field_agent', '1234')}
                 className="w-full flex items-center justify-between p-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs transition text-left min-h-[44px]"
               >
                 <div className="flex items-center space-x-2.5">
                   <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
-                    M
+                    G
                   </div>
                   <div>
-                    <p className="font-bold text-slate-800">Mercy Achieng (Mombasa)</p>
-                    <p className="text-[11px] text-slate-500 font-mono">0723 456 789 • Field Agent</p>
+                    <p className="font-bold text-slate-800">Geoffrey Kiptoo (Naivasha)</p>
+                    <p className="text-[11px] text-slate-500 font-mono">0712 345 613 • Field Agent</p>
                   </div>
                 </div>
                 <span className="text-[11px] font-bold text-blue-600">Login &rarr;</span>

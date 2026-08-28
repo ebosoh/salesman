@@ -134,12 +134,12 @@ export class TrackingService {
 
     return new Promise((resolve) => {
       if (!('geolocation' in navigator)) {
-        // Fallback default coordinates (Nairobi Commercial / Industrial Area)
+        // Fallback default coordinates (Nakuru Commercial / Industrial Area)
         const fallbackLog: LocationLog = {
           id: `loc-${Date.now()}`,
           agent_id: this.currentAgent!.id,
-          latitude: -1.3032,
-          longitude: 36.8441,
+          latitude: -0.2827,
+          longitude: 36.0673,
           accuracy: 25,
           speed: 0,
           is_mocked: false,
@@ -158,12 +158,12 @@ export class TrackingService {
         },
         async (err) => {
           console.warn('getCurrentPosition failed:', err.message);
-          // Nairobi fallback default
+          // Nakuru CBD fallback default
           const fallbackLog: LocationLog = {
             id: `loc-${Date.now()}`,
             agent_id: this.currentAgent!.id,
-            latitude: -1.3090,
-            longitude: 36.8850,
+            latitude: -0.2827,
+            longitude: 36.0673,
             accuracy: 50,
             speed: 0,
             is_mocked: false,

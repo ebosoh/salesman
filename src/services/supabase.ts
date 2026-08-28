@@ -16,41 +16,185 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 
-// Initial Mock Seed Data for Kenyan Field Agents & Operations Admin
+// Initial Mock Seed Data for Nakuru County Field Agents & Operations Admin
 export const INITIAL_PROFILES: Profile[] = [
   {
-    id: '11111111-1111-1111-1111-111111111111',
+    id: '11111111-1111-1111-1111-111111111101',
     full_name: 'John Kimani',
-    phone_number: '0712345678',
+    phone_number: '0712345601',
     role: 'field_agent',
-    device_fingerprint: 'FP-A14-KEN',
+    device_fingerprint: 'FP-A14-NKU01',
     pin: '1234',
     is_active: true
   },
   {
-    id: '22222222-2222-2222-2222-222222222222',
+    id: '11111111-1111-1111-1111-111111111102',
     full_name: 'Mercy Achieng',
-    phone_number: '0723456789',
+    phone_number: '0712345602',
     role: 'field_agent',
-    device_fingerprint: 'FP-TECNO-KEN',
+    device_fingerprint: 'FP-TECNO-NKU02',
     pin: '1234',
     is_active: true
   },
   {
-    id: '33333333-3333-3333-3333-333333333333',
+    id: '11111111-1111-1111-1111-111111111103',
     full_name: 'David Kiprono',
-    phone_number: '0734567890',
+    phone_number: '0712345603',
     role: 'field_agent',
-    device_fingerprint: 'FP-INFINIX-KEN',
+    device_fingerprint: 'FP-INFINIX-NKU03',
     pin: '1234',
     is_active: true
   },
   {
-    id: '44444444-4444-4444-4444-444444444444',
+    id: '11111111-1111-1111-1111-111111111104',
     full_name: 'Faith Wanjiku',
-    phone_number: '0745678901',
+    phone_number: '0712345604',
     role: 'field_agent',
-    device_fingerprint: 'FP-REDMI-KEN',
+    device_fingerprint: 'FP-REDMI-NKU04',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111105',
+    full_name: 'Peter Omwamba',
+    phone_number: '0712345605',
+    role: 'field_agent',
+    device_fingerprint: 'FP-SAMS-NKU05',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111106',
+    full_name: 'Grace Njeri',
+    phone_number: '0712345606',
+    role: 'field_agent',
+    device_fingerprint: 'FP-REDMI-NKU06',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111107',
+    full_name: 'Samuel Koech',
+    phone_number: '0712345607',
+    role: 'field_agent',
+    device_fingerprint: 'FP-OPPO-NKU07',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111108',
+    full_name: 'Eunice Moraa',
+    phone_number: '0712345608',
+    role: 'field_agent',
+    device_fingerprint: 'FP-TECNO-NKU08',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111109',
+    full_name: 'Dennis Kipkemboi',
+    phone_number: '0712345609',
+    role: 'field_agent',
+    device_fingerprint: 'FP-INF-NKU09',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111110',
+    full_name: 'Beatrice Chebet',
+    phone_number: '0712345610',
+    role: 'field_agent',
+    device_fingerprint: 'FP-VIVO-NKU10',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111111',
+    full_name: 'James Mwangi',
+    phone_number: '0712345611',
+    role: 'field_agent',
+    device_fingerprint: 'FP-SAMS-NKU11',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111112',
+    full_name: 'Rosemary Wambui',
+    phone_number: '0712345612',
+    role: 'field_agent',
+    device_fingerprint: 'FP-NOKIA-NKU12',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111113',
+    full_name: 'Geoffrey Kiptoo',
+    phone_number: '0712345613',
+    role: 'field_agent',
+    device_fingerprint: 'FP-TECNO-NKU13',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111114',
+    full_name: 'Caroline Muthoni',
+    phone_number: '0712345614',
+    role: 'field_agent',
+    device_fingerprint: 'FP-INF-NKU14',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111115',
+    full_name: 'Victor Otieno',
+    phone_number: '0712345615',
+    role: 'field_agent',
+    device_fingerprint: 'FP-REDMI-NKU15',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111116',
+    full_name: 'Agnes Wanjiru',
+    phone_number: '0712345616',
+    role: 'field_agent',
+    device_fingerprint: 'FP-SAMS-NKU16',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111117',
+    full_name: 'Brian Rotich',
+    phone_number: '0712345617',
+    role: 'field_agent',
+    device_fingerprint: 'FP-OPPO-NKU17',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111118',
+    full_name: 'Lydia Chepkemoi',
+    phone_number: '0712345618',
+    role: 'field_agent',
+    device_fingerprint: 'FP-TECNO-NKU18',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111119',
+    full_name: 'Kevin Ochieng',
+    phone_number: '0712345619',
+    role: 'field_agent',
+    device_fingerprint: 'FP-VIVO-NKU19',
+    pin: '1234',
+    is_active: true
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111120',
+    full_name: 'Stella Nyambura',
+    phone_number: '0712345620',
+    role: 'field_agent',
+    device_fingerprint: 'FP-SAMS-NKU20',
     pin: '1234',
     is_active: true
   },
@@ -59,7 +203,7 @@ export const INITIAL_PROFILES: Profile[] = [
     full_name: 'Sarah Mwangi (Operations Admin)',
     phone_number: '0700000000',
     role: 'admin',
-    device_fingerprint: 'FP-ADMIN-KEN',
+    device_fingerprint: 'FP-ADMIN-NKU',
     pin: '8888',
     is_active: true
   }
@@ -67,13 +211,13 @@ export const INITIAL_PROFILES: Profile[] = [
 
 export const INITIAL_VISITS: ClientVisit[] = [
   {
-    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
-    agent_id: '11111111-1111-1111-1111-111111111111',
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01',
+    agent_id: '11111111-1111-1111-1111-111111111101',
     shop_name: 'Crown Hardware & Plastics',
-    phone_number: '0722112233',
-    physical_location: 'Pipeline Stage, Nairobi',
-    latitude: -1.3090,
-    longitude: 36.8850,
+    phone_number: '0722112201',
+    physical_location: 'Kenyatta Avenue, Nakuru CBD',
+    latitude: -0.2827,
+    longitude: 36.0673,
     comments: 'Requested quotation for 500 units of 20L Jerrycans and PVC fittings.',
     device_ip: '197.237.102.14',
     device_name: 'Samsung Galaxy A14',
@@ -82,135 +226,383 @@ export const INITIAL_VISITS: ClientVisit[] = [
     photo_url: 'https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=500&auto=format&fit=crop&q=60'
   },
   {
-    id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
-    agent_id: '22222222-2222-2222-2222-222222222222',
-    shop_name: 'Coast BuildMat Supplies',
-    phone_number: '0733445566',
-    physical_location: 'Digo Road, Mombasa',
-    latitude: -4.0580,
-    longitude: 39.6640,
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa02',
+    agent_id: '11111111-1111-1111-1111-111111111102',
+    shop_name: 'Kaptembwa Agro-Plastics Ltd',
+    phone_number: '0733445502',
+    physical_location: 'Kaptembwa Market, Nakuru West',
+    latitude: -0.2980,
+    longitude: 36.0420,
     comments: 'Delivered sample water tanks catalog. Owner requested follow-up next Tuesday.',
     device_ip: '102.135.24.89',
     device_name: 'Tecno Spark 10 Pro',
-    visited_at: new Date(Date.now() - 1 * 3600000).toISOString(),
+    visited_at: new Date(Date.now() - 2 * 3600000).toISOString(),
     is_flagged: false,
     photo_url: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=500&auto=format&fit=crop&q=60'
   },
   {
-    id: 'cccccccc-cccc-cccc-cccc-cccccccccccc',
-    agent_id: '33333333-3333-3333-3333-333333333333',
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa03',
+    agent_id: '11111111-1111-1111-1111-111111111103',
     shop_name: 'QuickFix General Store',
-    phone_number: '0799887766',
-    physical_location: 'Oginga Odinga St, Kisumu',
-    latitude: -0.0917,
-    longitude: 34.7680,
-    comments: 'Store visit recorded while in fast transit. Flagged anomaly for verification.',
+    phone_number: '0799887703',
+    physical_location: 'Free Area Center, Nakuru East',
+    latitude: -0.2805,
+    longitude: 36.1050,
+    comments: 'Store visit recorded while in fast transit. Verified anomaly.',
     device_ip: '197.232.88.19',
     device_name: 'Infinix Hot 30',
-    visited_at: new Date(Date.now() - 30 * 60000).toISOString(),
+    visited_at: new Date(Date.now() - 45 * 60000).toISOString(),
     is_flagged: true,
     flag_reason: 'Speed Jump Anomaly: Speed recorded 125 km/h (> 100 km/h limit)',
     photo_url: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?w=500&auto=format&fit=crop&q=60'
+  },
+  {
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa04',
+    agent_id: '11111111-1111-1111-1111-111111111106',
+    shop_name: 'Mau View Hardware Mart',
+    phone_number: '0722334406',
+    physical_location: 'Main Commercial St, Njoro Town',
+    latitude: -0.3450,
+    longitude: 35.9400,
+    comments: 'Ordered 200 rolls of drip irrigation pipes.',
+    device_ip: '197.237.55.12',
+    device_name: 'Redmi Note 12',
+    visited_at: new Date(Date.now() - 1 * 3600000).toISOString(),
+    is_flagged: false,
+    photo_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&auto=format&fit=crop&q=60'
+  },
+  {
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa05',
+    agent_id: '11111111-1111-1111-1111-111111111111',
+    shop_name: 'Rift Valley Hardware & Timber',
+    phone_number: '0733556611',
+    physical_location: 'Gilgil Town Center',
+    latitude: -0.4931,
+    longitude: 36.2833,
+    comments: 'Interested in Sewak 1000L cylindrical water tanks.',
+    device_ip: '102.135.88.22',
+    device_name: 'Samsung Galaxy A24',
+    visited_at: new Date(Date.now() - 4 * 3600000).toISOString(),
+    is_flagged: false,
+    photo_url: 'https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?w=500&auto=format&fit=crop&q=60'
+  },
+  {
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa06',
+    agent_id: '11111111-1111-1111-1111-111111111113',
+    shop_name: 'Crater Builders & Pipe Supplies',
+    phone_number: '0744667713',
+    physical_location: 'Mbaria Kaniu Rd, Naivasha CBD',
+    latitude: -0.7172,
+    longitude: 36.4310,
+    comments: 'Verified delivery of PVC elbows and conduit pipes.',
+    device_ip: '197.232.14.77',
+    device_name: 'Tecno Camon 20',
+    visited_at: new Date(Date.now() - 1.5 * 3600000).toISOString(),
+    is_flagged: false,
+    photo_url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&auto=format&fit=crop&q=60'
+  },
+  {
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa07',
+    agent_id: '11111111-1111-1111-1111-111111111109',
+    shop_name: 'Highland Hardware Supplies',
+    phone_number: '0755778809',
+    physical_location: 'Posta Road, Molo Town',
+    latitude: -0.2480,
+    longitude: 35.7330,
+    comments: 'Stock inquiry for Sewak heavy-duty basins and buckets.',
+    device_ip: '197.237.99.33',
+    device_name: 'Infinix Note 30',
+    visited_at: new Date(Date.now() - 2.5 * 3600000).toISOString(),
+    is_flagged: false,
+    photo_url: 'https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=500&auto=format&fit=crop&q=60'
+  },
+  {
+    id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa08',
+    agent_id: '11111111-1111-1111-1111-111111111117',
+    shop_name: 'Bahati Farmers Construction Hub',
+    phone_number: '0766889917',
+    physical_location: 'Bahati Center, Nakuru North',
+    latitude: -0.1550,
+    longitude: 36.1450,
+    comments: 'Confirmed order for 150 greenhouse film polythene sheets.',
+    device_ip: '102.135.44.11',
+    device_name: 'Samsung Galaxy A14',
+    visited_at: new Date(Date.now() - 30 * 60000).toISOString(),
+    is_flagged: false,
+    photo_url: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=500&auto=format&fit=crop&q=60'
   }
 ];
 
 export const INITIAL_LOCATION_LOGS: LocationLog[] = [
-  // John Kimani route in Nairobi Eastlands
+  // 1. John Kimani (Nakuru CBD & Section 58)
   {
-    id: 'loc-1',
-    agent_id: '11111111-1111-1111-1111-111111111111',
-    latitude: -1.3150,
-    longitude: 36.8700,
-    accuracy: 12,
-    speed: 18,
-    is_mocked: false,
-    recorded_at: new Date(Date.now() - 4 * 3600000).toISOString()
-  },
-  {
-    id: 'loc-2',
-    agent_id: '11111111-1111-1111-1111-111111111111',
-    latitude: -1.3110,
-    longitude: 36.8790,
-    accuracy: 9,
-    speed: 24,
-    is_mocked: false,
-    recorded_at: new Date(Date.now() - 3.5 * 3600000).toISOString()
-  },
-  {
-    id: 'loc-3',
-    agent_id: '11111111-1111-1111-1111-111111111111',
-    latitude: -1.3090,
-    longitude: 36.8850,
-    accuracy: 8,
-    speed: 0,
+    id: 'loc-1a',
+    agent_id: '11111111-1111-1111-1111-111111111101',
+    latitude: -0.2860,
+    longitude: 36.0620,
+    accuracy: 10,
+    speed: 15,
     is_mocked: false,
     recorded_at: new Date(Date.now() - 3 * 3600000).toISOString()
   },
   {
-    id: 'loc-4',
-    agent_id: '11111111-1111-1111-1111-111111111111',
-    latitude: -1.3040,
-    longitude: 36.8920,
-    accuracy: 14,
+    id: 'loc-1b',
+    agent_id: '11111111-1111-1111-1111-111111111101',
+    latitude: -0.2827,
+    longitude: 36.0673,
+    accuracy: 8,
     speed: 22,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 15 * 60000).toISOString()
+  },
+
+  // 2. Mercy Achieng (Kaptembwa / Shabab)
+  {
+    id: 'loc-2a',
+    agent_id: '11111111-1111-1111-1111-111111111102',
+    latitude: -0.2980,
+    longitude: 36.0420,
+    accuracy: 12,
+    speed: 0,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 25 * 60000).toISOString()
+  },
+
+  // 3. David Kiprono (Free Area / Pipeline Nakuru)
+  {
+    id: 'loc-3a',
+    agent_id: '11111111-1111-1111-1111-111111111103',
+    latitude: -0.2805,
+    longitude: 36.1050,
+    accuracy: 9,
+    speed: 35,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 10 * 60000).toISOString()
+  },
+
+  // 4. Faith Wanjiku (Lanet)
+  {
+    id: 'loc-4a',
+    agent_id: '11111111-1111-1111-1111-111111111104',
+    latitude: -0.2750,
+    longitude: 36.1400,
+    accuracy: 14,
+    speed: 0,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 40 * 60000).toISOString()
+  },
+
+  // 5. Peter Omwamba (Nakuru Industrial Area)
+  {
+    id: 'loc-5a',
+    agent_id: '11111111-1111-1111-1111-111111111105',
+    latitude: -0.2910,
+    longitude: 36.0580,
+    accuracy: 11,
+    speed: 18,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 12 * 60000).toISOString()
+  },
+
+  // 6. Grace Njeri (Njoro Town)
+  {
+    id: 'loc-6a',
+    agent_id: '11111111-1111-1111-1111-111111111106',
+    latitude: -0.3450,
+    longitude: 35.9400,
+    accuracy: 10,
+    speed: 28,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 8 * 60000).toISOString()
+  },
+
+  // 7. Samuel Koech (Ngata)
+  {
+    id: 'loc-7a',
+    agent_id: '11111111-1111-1111-1111-111111111107',
+    latitude: -0.2720,
+    longitude: 35.9850,
+    accuracy: 15,
+    speed: 42,
     is_mocked: false,
     recorded_at: new Date(Date.now() - 20 * 60000).toISOString()
   },
-  // Mercy Achieng in Mombasa
+
+  // 8. Eunice Moraa (Salgaa)
   {
-    id: 'loc-5',
-    agent_id: '22222222-2222-2222-2222-222222222222',
-    latitude: -4.0620,
-    longitude: 39.6580,
-    accuracy: 10,
-    speed: 15,
-    is_mocked: false,
-    recorded_at: new Date(Date.now() - 2 * 3600000).toISOString()
-  },
-  {
-    id: 'loc-6',
-    agent_id: '22222222-2222-2222-2222-222222222222',
-    latitude: -4.0580,
-    longitude: 39.6640,
-    accuracy: 11,
+    id: 'loc-8a',
+    agent_id: '11111111-1111-1111-1111-111111111108',
+    latitude: -0.2050,
+    longitude: 35.8600,
+    accuracy: 12,
     speed: 0,
     is_mocked: false,
-    recorded_at: new Date(Date.now() - 1 * 3600000).toISOString()
+    recorded_at: new Date(Date.now() - 35 * 60000).toISOString()
   },
-  // David Kiprono in Kisumu
+
+  // 9. Dennis Kipkemboi (Molo Town)
   {
-    id: 'loc-7',
-    agent_id: '33333333-3333-3333-3333-333333333333',
-    latitude: -0.0917,
-    longitude: 34.7680,
-    accuracy: 45,
-    speed: 125,
+    id: 'loc-9a',
+    agent_id: '11111111-1111-1111-1111-111111111109',
+    latitude: -0.2480,
+    longitude: 35.7330,
+    accuracy: 9,
+    speed: 15,
     is_mocked: false,
-    recorded_at: new Date(Date.now() - 30 * 60000).toISOString()
+    recorded_at: new Date(Date.now() - 18 * 60000).toISOString()
   },
-  // Faith Wanjiku in Nakuru
+
+  // 10. Beatrice Chebet (Elburgon)
   {
-    id: 'loc-8',
-    agent_id: '44444444-4444-4444-4444-444444444444',
-    latitude: -0.2833,
-    longitude: 36.0667,
+    id: 'loc-10a',
+    agent_id: '11111111-1111-1111-1111-111111111110',
+    latitude: -0.2970,
+    longitude: 35.8150,
+    accuracy: 13,
+    speed: 25,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 14 * 60000).toISOString()
+  },
+
+  // 11. James Mwangi (Gilgil Town)
+  {
+    id: 'loc-11a',
+    agent_id: '11111111-1111-1111-1111-111111111111',
+    latitude: -0.4931,
+    longitude: 36.2833,
+    accuracy: 10,
+    speed: 20,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 16 * 60000).toISOString()
+  },
+
+  // 12. Rosemary Wambui (Kikopey)
+  {
+    id: 'loc-12a',
+    agent_id: '11111111-1111-1111-1111-111111111112',
+    latitude: -0.4450,
+    longitude: 36.2350,
+    accuracy: 14,
+    speed: 0,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 50 * 60000).toISOString()
+  },
+
+  // 13. Geoffrey Kiptoo (Naivasha CBD)
+  {
+    id: 'loc-13a',
+    agent_id: '11111111-1111-1111-1111-111111111113',
+    latitude: -0.7172,
+    longitude: 36.4310,
+    accuracy: 8,
+    speed: 30,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 7 * 60000).toISOString()
+  },
+
+  // 14. Caroline Muthoni (Karagita / South Lake)
+  {
+    id: 'loc-14a',
+    agent_id: '11111111-1111-1111-1111-111111111114',
+    latitude: -0.7600,
+    longitude: 36.4150,
+    accuracy: 11,
+    speed: 19,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 22 * 60000).toISOString()
+  },
+
+  // 15. Victor Otieno (Kayole Naivasha)
+  {
+    id: 'loc-15a',
+    agent_id: '11111111-1111-1111-1111-111111111115',
+    latitude: -0.7020,
+    longitude: 36.4480,
     accuracy: 15,
     speed: 0,
     is_mocked: false,
+    recorded_at: new Date(Date.now() - 30 * 60000).toISOString()
+  },
+
+  // 16. Agnes Wanjiru (Mai Mahiu)
+  {
+    id: 'loc-16a',
+    agent_id: '11111111-1111-1111-1111-111111111116',
+    latitude: -0.9900,
+    longitude: 36.5850,
+    accuracy: 12,
+    speed: 38,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 11 * 60000).toISOString()
+  },
+
+  // 17. Brian Rotich (Bahati)
+  {
+    id: 'loc-17a',
+    agent_id: '11111111-1111-1111-1111-111111111117',
+    latitude: -0.1550,
+    longitude: 36.1450,
+    accuracy: 10,
+    speed: 24,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 19 * 60000).toISOString()
+  },
+
+  // 18. Lydia Chepkemoi (Subukia)
+  {
+    id: 'loc-18a',
+    agent_id: '11111111-1111-1111-1111-111111111118',
+    latitude: 0.0050,
+    longitude: 36.2450,
+    accuracy: 16,
+    speed: 0,
+    is_mocked: false,
     recorded_at: new Date(Date.now() - 45 * 60000).toISOString()
+  },
+
+  // 19. Kevin Ochieng (Ronda Nakuru)
+  {
+    id: 'loc-19a',
+    agent_id: '11111111-1111-1111-1111-111111111119',
+    latitude: -0.2950,
+    longitude: 36.0850,
+    accuracy: 9,
+    speed: 16,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 27 * 60000).toISOString()
+  },
+
+  // 20. Stella Nyambura (Milimani / London Nakuru)
+  {
+    id: 'loc-20a',
+    agent_id: '11111111-1111-1111-1111-111111111120',
+    latitude: -0.2680,
+    longitude: 36.0550,
+    accuracy: 8,
+    speed: 20,
+    is_mocked: false,
+    recorded_at: new Date(Date.now() - 5 * 60000).toISOString()
   }
 ];
 
-// Initialize Mock Store in LocalStorage if empty
+export const CURRENT_DATA_VERSION = 'sewak_v2_nakuru_20';
+
+// Initialize Mock Store in LocalStorage if empty or outdated
 export function initLocalMockStore() {
-  if (!localStorage.getItem('sewak_profiles')) {
+  const version = localStorage.getItem('sewak_data_version');
+  const storedProfiles = localStorage.getItem('sewak_profiles');
+  let parsedProfiles: Profile[] = [];
+  try {
+    if (storedProfiles) parsedProfiles = JSON.parse(storedProfiles);
+  } catch {
+    parsedProfiles = [];
+  }
+
+  if (version !== CURRENT_DATA_VERSION || !storedProfiles || parsedProfiles.length < 20) {
     localStorage.setItem('sewak_profiles', JSON.stringify(INITIAL_PROFILES));
-  }
-  if (!localStorage.getItem('sewak_visits')) {
     localStorage.setItem('sewak_visits', JSON.stringify(INITIAL_VISITS));
-  }
-  if (!localStorage.getItem('sewak_locations')) {
     localStorage.setItem('sewak_locations', JSON.stringify(INITIAL_LOCATION_LOGS));
+    localStorage.setItem('sewak_data_version', CURRENT_DATA_VERSION);
   }
 }
 

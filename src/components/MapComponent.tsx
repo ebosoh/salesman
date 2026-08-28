@@ -13,12 +13,36 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// Helper component to center/fly map when focus changes
-function MapRecenter({ center, zoom }: { center: [number, number]; zoom?: number }) {
+const NAKURU_COUNTY_CENTER: [number, number] = [-0.3031, 36.0800]; // Nakuru County Central Hub
+
+// Helper component to center/fly map when focus changes or fit all agents
+function MapRecenter({
+  center,
+  zoom,
+  selectedAgentId,
+  agents
+}: {
+  center: [number, number];
+  zoom?: number;
+  selectedAgentId?: string | null;
+  agents: MapAgentMarker[];
+}) {
   const map = useMap();
   useEffect(() => {
-    map.flyTo(center, zoom || map.getZoom(), { duration: 1.2 });
-  }, [center, zoom, map]);
+    if (selectedAgentId) {
+      map.flyTo(center, zoom || 14, { duration: 1.2 });
+    } else if (agents.length > 0) {
+      const validPoints = agents
+        .filter((a) => a.lastLocation && !isNaN(a.lastLocation.latitude) && !isNaN(a.lastLocation.longitude))
+        .map((a) => [a.lastLocation.latitude, a.lastLocation.longitude] as [number, number]);
+      if (validPoints.length > 0) {
+        const bounds = L.latLngBounds(validPoints);
+        map.fitBounds(bounds, { padding: [45, 45], maxZoom: 12 });
+      } else {
+        map.flyTo(center, zoom || 10, { duration: 1.2 });
+      }
+    }
+  }, [center, zoom, selectedAgentId, agents, map]);
   return null;
 }
 
@@ -140,8 +164,8 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
   // Find active focus agent
   const selectedAgent = useMemo(() => {
-    if (!selectedAgentId) return agents[0] || null;
-    return agents.find(a => a.profile.id === selectedAgentId) || agents[0] || null;
+    if (!selectedAgentId) return null;
+    return agents.find((a) => a.profile.id === selectedAgentId) || null;
   }, [agents, selectedAgentId]);
 
   // Route breadcrumbs polyline coordinates for selected agent
@@ -152,21 +176,21 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     return selectedAgent.todayLocations
       .slice()
       .sort((a, b) => new Date(a.recorded_at).getTime() - new Date(b.recorded_at).getTime())
-      .map(loc => [loc.latitude, loc.longitude] as [number, number]);
+      .map((loc) => [loc.latitude, loc.longitude] as [number, number]);
   }, [selectedAgent]);
 
   const mapCenter: [number, number] = useMemo(() => {
     if (selectedAgent && selectedAgent.lastLocation) {
       return [selectedAgent.lastLocation.latitude, selectedAgent.lastLocation.longitude];
     }
-    return [-1.2921, 36.8219]; // Nairobi Default
+    return NAKURU_COUNTY_CENTER;
   }, [selectedAgent]);
 
   return (
     <div className="w-full h-full relative rounded-2xl overflow-hidden shadow-inner border border-slate-200">
       <MapContainer
-        center={mapCenter}
-        zoom={12}
+        center={NAKURU_COUNTY_CENTER}
+        zoom={10}
         scrollWheelZoom={true}
         className="w-full h-full z-10"
         style={{ minHeight: '400px' }}
@@ -176,7 +200,12 @@ export const MapComponent: React.FC<MapComponentProps> = ({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <MapRecenter center={mapCenter} zoom={selectedAgentId ? 14 : 12} />
+        <MapRecenter
+          center={mapCenter}
+          zoom={selectedAgentId ? 14 : 10}
+          selectedAgentId={selectedAgentId}
+          agents={agents}
+        />
 
         {/* Selected Agent Route Breadcrumb Line */}
         {breadcrumbPositions.length > 1 && (
