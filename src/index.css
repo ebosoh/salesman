@@ -52,3 +52,26 @@
 button, a, input, select, textarea {
   touch-action: manipulation;
 }
+
+/* Hide Lovable badge and "Edit with Lovable" elements */
+#lovable-badge,
+.lovable-badge,
+[data-lovable],
+[data-lovable-badge],
+[data-component-name="LovableBadge"],
+a[href*="lovable.dev"],
+a[href*="lovable.app"],
+iframe[id*="lovable"],
+iframe[src*="lovable"],
+div[class*="lovable"],
+div[id*="lovable"],
+div[class*="Lovable"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}

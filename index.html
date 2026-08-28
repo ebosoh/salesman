@@ -16,6 +16,40 @@
   </head>
   <body class="bg-surface-muted text-slate-800 antialiased selection:bg-brand-red selection:text-white">
     <div id="root"></div>
+    <script>
+      (function() {
+        function purgeLovable() {
+          try {
+            const elements = document.querySelectorAll(
+              '#lovable-badge, .lovable-badge, [data-lovable], [data-lovable-badge], [data-component-name="LovableBadge"], a[href*="lovable.dev"], a[href*="lovable.app"], iframe[src*="lovable"]'
+            );
+            elements.forEach(function(el) { el.remove(); });
+
+            const allElements = document.querySelectorAll('button, a, div, span, p');
+            for (let i = 0; i < allElements.length; i++) {
+              const el = allElements[i];
+              if (el.children.length === 0 && el.textContent && el.textContent.toLowerCase().includes('edit with lovable')) {
+                const parent = el.closest('div, a, button');
+                if (parent && parent !== document.body && parent !== document.getElementById('root')) {
+                  parent.remove();
+                } else {
+                  el.remove();
+                }
+              }
+            }
+          } catch (e) {}
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', purgeLovable);
+        } else {
+          purgeLovable();
+        }
+
+        const observer = new MutationObserver(purgeLovable);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
