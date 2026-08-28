@@ -213,12 +213,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01',
     agent_id: '11111111-1111-1111-1111-111111111101',
-    shop_name: 'Crown Hardware & Plastics',
+    shop_name: 'Crown Hardware & Plumbing Supplies',
     phone_number: '0722112201',
     physical_location: 'Kenyatta Avenue, Nakuru CBD',
     latitude: -0.2827,
     longitude: 36.0673,
-    comments: 'Requested quotation for 500 units of 20L Jerrycans and PVC fittings.',
+    comments: 'Requested quotation for 5x 5000L cylindrical plastic water tanks and 100 bundles of 1/2-inch and 3/4-inch PVC plumbing pipes.',
     device_ip: '197.237.102.14',
     device_name: 'Samsung Galaxy A14',
     visited_at: new Date(Date.now() - 3 * 3600000).toISOString(),
@@ -228,12 +228,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa02',
     agent_id: '11111111-1111-1111-1111-111111111102',
-    shop_name: 'Kaptembwa Agro-Plastics Ltd',
+    shop_name: 'Kaptembwa Plumbing & Tank Depot',
     phone_number: '0733445502',
     physical_location: 'Kaptembwa Market, Nakuru West',
     latitude: -0.2980,
     longitude: 36.0420,
-    comments: 'Delivered sample water tanks catalog. Owner requested follow-up next Tuesday.',
+    comments: 'Delivered sample water tanks (1000L - 10000L) & PVC plumbing pipes catalog. Owner requested follow-up next Tuesday.',
     device_ip: '102.135.24.89',
     device_name: 'Tecno Spark 10 Pro',
     visited_at: new Date(Date.now() - 2 * 3600000).toISOString(),
@@ -243,12 +243,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa03',
     agent_id: '11111111-1111-1111-1111-111111111103',
-    shop_name: 'QuickFix General Store',
+    shop_name: 'QuickFix Plumbing & Hardware Store',
     phone_number: '0799887703',
     physical_location: 'Free Area Center, Nakuru East',
     latitude: -0.2805,
     longitude: 36.1050,
-    comments: 'Store visit recorded while in fast transit. Verified anomaly.',
+    comments: 'Store visit recorded while in fast transit. Inquired about HDPE water pipes & 3000L plastic water tanks. Flagged anomaly.',
     device_ip: '197.232.88.19',
     device_name: 'Infinix Hot 30',
     visited_at: new Date(Date.now() - 45 * 60000).toISOString(),
@@ -259,12 +259,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa04',
     agent_id: '11111111-1111-1111-1111-111111111106',
-    shop_name: 'Mau View Hardware Mart',
+    shop_name: 'Mau View Hardware & Piping Mart',
     phone_number: '0722334406',
     physical_location: 'Main Commercial St, Njoro Town',
     latitude: -0.3450,
     longitude: 35.9400,
-    comments: 'Ordered 200 rolls of drip irrigation pipes.',
+    comments: 'Ordered 50 bundles of Class B & C PVC plumbing pipes and 4x 2500L plastic water storage tanks.',
     device_ip: '197.237.55.12',
     device_name: 'Redmi Note 12',
     visited_at: new Date(Date.now() - 1 * 3600000).toISOString(),
@@ -274,12 +274,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa05',
     agent_id: '11111111-1111-1111-1111-111111111111',
-    shop_name: 'Rift Valley Hardware & Timber',
+    shop_name: 'Rift Valley Tanks & Piping Supplies',
     phone_number: '0733556611',
     physical_location: 'Gilgil Town Center',
     latitude: -0.4931,
     longitude: 36.2833,
-    comments: 'Interested in Sewak 1000L cylindrical water tanks.',
+    comments: 'Interested in Sewak 1000L & 2000L cylindrical plastic water tanks and PPR plumbing pipe fittings.',
     device_ip: '102.135.88.22',
     device_name: 'Samsung Galaxy A24',
     visited_at: new Date(Date.now() - 4 * 3600000).toISOString(),
@@ -294,7 +294,7 @@ export const INITIAL_VISITS: ClientVisit[] = [
     physical_location: 'Mbaria Kaniu Rd, Naivasha CBD',
     latitude: -0.7172,
     longitude: 36.4310,
-    comments: 'Verified delivery of PVC elbows and conduit pipes.',
+    comments: 'Verified delivery of PVC waste pipes, plumbing elbows, and 5000L vertical water tanks.',
     device_ip: '197.232.14.77',
     device_name: 'Tecno Camon 20',
     visited_at: new Date(Date.now() - 1.5 * 3600000).toISOString(),
@@ -304,12 +304,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa07',
     agent_id: '11111111-1111-1111-1111-111111111109',
-    shop_name: 'Highland Hardware Supplies',
+    shop_name: 'Highland Tanks & Hardware Supplies',
     phone_number: '0755778809',
     physical_location: 'Posta Road, Molo Town',
     latitude: -0.2480,
     longitude: 35.7330,
-    comments: 'Stock inquiry for Sewak heavy-duty basins and buckets.',
+    comments: 'Stock inquiry for Sewak UV-stabilized plastic water tanks (1000L, 5000L) and PVC plumbing conduit pipes.',
     device_ip: '197.237.99.33',
     device_name: 'Infinix Note 30',
     visited_at: new Date(Date.now() - 2.5 * 3600000).toISOString(),
@@ -319,12 +319,12 @@ export const INITIAL_VISITS: ClientVisit[] = [
   {
     id: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa08',
     agent_id: '11111111-1111-1111-1111-111111111117',
-    shop_name: 'Bahati Farmers Construction Hub',
+    shop_name: 'Bahati Plumbing & Tank Hub',
     phone_number: '0766889917',
     physical_location: 'Bahati Center, Nakuru North',
     latitude: -0.1550,
     longitude: 36.1450,
-    comments: 'Confirmed order for 150 greenhouse film polythene sheets.',
+    comments: 'Confirmed order for 8x 3000L plastic water tanks and 120 lengths of PPR hot & cold plumbing pipes.',
     device_ip: '102.135.44.11',
     device_name: 'Samsung Galaxy A14',
     visited_at: new Date(Date.now() - 30 * 60000).toISOString(),
@@ -585,7 +585,7 @@ export const INITIAL_LOCATION_LOGS: LocationLog[] = [
   }
 ];
 
-export const CURRENT_DATA_VERSION = 'sewak_v2_nakuru_20';
+export const CURRENT_DATA_VERSION = 'sewak_v3_nakuru_tanks_pipes';
 
 // Initialize Mock Store in LocalStorage if empty or outdated
 export function initLocalMockStore() {

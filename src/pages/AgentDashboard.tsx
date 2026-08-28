@@ -206,7 +206,7 @@ export const AgentDashboard: React.FC = () => {
             </div>
             <h4 className="font-bold text-slate-800 text-sm">No visits logged today</h4>
             <p className="text-xs text-slate-500 max-w-sm mx-auto">
-              Tap the button below to visit a hardware or plastic dealer store and record storefront proof.
+              Tap the button below to visit a hardware, plumbing, or water tank dealer store and record storefront proof.
             </p>
             <Link
               to="/agent/visit"

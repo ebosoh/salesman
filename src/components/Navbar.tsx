@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-extrabold text-lg tracking-tight text-white">SEWAK</span>
                 <span className="text-[10px] bg-brand-red text-white font-bold px-1.5 py-0.5 rounded">PWA</span>
               </div>
-              <p className="text-[10px] text-blue-200 uppercase tracking-wider font-semibold">Plastics Kenya</p>
+              <p className="text-[10px] text-blue-200 uppercase tracking-wider font-semibold">Tanks & Plumbing Pipes</p>
             </div>
           </Link>
 

@@ -52,7 +52,7 @@ export const Login: React.FC = () => {
             SEWAK PLASTICS
           </h1>
           <p className="text-xs uppercase tracking-widest font-bold text-brand-red mt-0.5">
-            Field Sales Tracker & Verification PWA
+            Water Tanks & Plumbing Pipes • Field Sales PWA
           </p>
         </div>
       </div>

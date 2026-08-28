@@ -356,7 +356,7 @@ export const ClientVisitForm: React.FC = () => {
               <input
                 type="text"
                 required
-                placeholder="e.g. Crown Hardware & Plastics Ltd"
+                placeholder="e.g. Crown Hardware & Plumbing Supplies Ltd"
                 value={shopName}
                 onChange={(e) => setShopName(e.target.value)}
                 className="block w-full pl-10 pr-3 py-3 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm font-medium min-h-[48px]"
@@ -416,7 +416,7 @@ export const ClientVisitForm: React.FC = () => {
             <div className="relative rounded-xl shadow-sm">
               <textarea
                 rows={3}
-                placeholder="e.g. Inquired about 500 units 20L Jerrycans, requested 10% discount on bulk PVC pipes..."
+                placeholder="e.g. Inquired about 5x 5000L plastic water tanks, requested discount on bulk 1-inch & 1/2-inch PVC plumbing pipes..."
                 value={comments}
                 onChange={(e) => setComments(e.target.value)}
                 className="block w-full p-3 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue sm:text-sm"
